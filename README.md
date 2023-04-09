@@ -20,9 +20,9 @@
 
 3. - [x] Create React App을 이용해 과제 구현
 
-4. - [ ] git clone 이후 `npm install && npm start`명령어 입력시 정상동작
+4. - [x] git clone 이후 `npm install && npm start`명령어 입력시 정상동작
 
-5. - [ ] 함수 컴포넌트 이용
+5. - [x] 함수 컴포넌트 이용
 
 6. - [ ] 기능구현에 직접적으로 연관된 라이브러리 사용 금지
 
@@ -32,7 +32,7 @@
    2. - [ ] Axios
    3. - [ ] Styled Components, Emotion, Sass
    4. - [ ] 아이콘 관련 라이브러리
-   5. - [ ] 기능과 직접적인 연관이 없는 라이브러리
+   5. - [ ] 기능과 직접적인 연관이 없는 라이브러리 (es-lint, prettier)
    
 8. - [ ] 가이드라인에 명시된 `test-id` 속성이 제대로 부여되지 않은 경우 구현이 안된 것으로 판단
 

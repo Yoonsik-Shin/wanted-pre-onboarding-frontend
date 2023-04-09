@@ -1,7 +1,8 @@
 import "./App.css";
+import Routers from "./routers/routes";
 
 function App() {
-    return <>메인페이지</>;
+    return <Routers />;
 }
 
 export default App;
