@@ -1,3 +1,4 @@
+import NavigateHome from "../../../commons/buttons/button-NavigateHome";
 import { onClickSubmit } from "./signup.queries";
 import { IProps } from "./signup.types";
 
@@ -34,6 +35,7 @@ export default function SignupUI(props: IProps) {
             >
                 회원가입
             </button>
+            <NavigateHome />
         </>
     );
 }
