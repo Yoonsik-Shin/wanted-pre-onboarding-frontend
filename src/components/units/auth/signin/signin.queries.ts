@@ -1,13 +1,13 @@
-import axios from "axios";
+import { DeployUrlAxios } from "../../../../commons/lib/deploy-url-axios";
 import { IInfo } from "./signin.types";
 
 export const onClickSubmit =
     ({ email, password, navigate }: IInfo) =>
     async () => {
         try {
-            const result = await axios({
+            const result = await DeployUrlAxios({
                 method: "post",
-                url: " http://localhost:8000/auth/signin",
+                url: "/auth/signin",
                 headers: { "Content-Type": "application/json" },
                 data: { email, password },
             });

@@ -1,7 +1,7 @@
 import axios from "axios";
 
-const baseURL = "http://localhost:8000/todos";
-// const baseURL = "https://www.pre-onboarding-selection-task.shop/todos";
+// const baseURL = "http://localhost:8000/todos";
+const baseURL = "https://www.pre-onboarding-selection-task.shop/todos";
 
 export const AuthorizedTodosAxios = axios.create({
     baseURL,
