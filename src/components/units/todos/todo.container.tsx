@@ -1,9 +1,9 @@
 import TodoUI from "./todo.presenter";
-
 import { ChangeEvent, useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { IDatas, IUD } from "./todo.types";
 import { createTodo, getTodos } from "./todo.queries";
+import { AxiosReq } from "../../../commons/lib/auth-todo-axios";
 
 export default function Todo() {
     const location = useLocation();
@@ -13,7 +13,7 @@ export default function Todo() {
     const [refetch, setRefetch] = useState<boolean>(false);
     const [datas, setDatas] = useState<IDatas[]>([]);
     const accessToken =
-        location?.state?.access_token || localStorage.getItem("access_token");
+        localStorage.getItem("access_token") ?? location?.state?.access_token;
 
     const Rerender = () => {
         setRefetch((prev) => !prev);
@@ -43,6 +43,7 @@ export default function Todo() {
             navigate("/signin");
         } else {
             getTodos(setDatas, accessToken);
+            AxiosReq(accessToken);
         }
     }, [refetch]);
 
