@@ -1,3 +1,4 @@
+import NavigateHome from "../../../commons/buttons/button-NavigateHome";
 import { onClickSubmit } from "./signin.queries";
 import { IProps } from "./signin.types";
 
@@ -24,6 +25,7 @@ export default function SigninUI(props: IProps) {
             >
                 로그인
             </button>
+            <NavigateHome />
         </>
     );
 }
