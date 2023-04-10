@@ -1,3 +1,4 @@
+import NavigateHome from "../../commons/buttons/button-NavigateHome";
 import TodoList from "./todo-list";
 import { IProps } from "./todo.types";
 
@@ -23,6 +24,7 @@ export default function TodoUI(props: IProps) {
             <button data-testid="new-todo-add-button" onClick={onClickCreate}>
                 추가
             </button>
+            <NavigateHome />
             {datas?.map((el) => (
                 <TodoList
                     key={el.id}
