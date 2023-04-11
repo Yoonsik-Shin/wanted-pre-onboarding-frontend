@@ -2,7 +2,7 @@ import { DeployUrlAxios } from "../../../../commons/lib/deploy-url-axios";
 import { IInfo } from "./signin.types";
 
 export const onClickSubmit =
-    ({ email, password, navigate }: IInfo) =>
+    ({ email, password, navigate, handleOpen }: IInfo) =>
     async () => {
         try {
             const result = await DeployUrlAxios({
@@ -12,12 +12,14 @@ export const onClickSubmit =
                 data: { email, password },
             });
             localStorage.setItem("access_token", result.data.access_token);
-            if (result.status === 200)
+            if (result.status === 200) {
+                handleOpen("signin");
                 navigate("/todo", {
                     state: {
                         access_token: result.data.access_token,
                     },
                 });
+            }
         } catch (error) {
             alert(error);
         }

@@ -10,7 +10,7 @@ export default function Routers(props: IModal) {
         <Routes>
             <Route path="/" element={<MainPage />} />
             <Route path="/signup" element={<SignupPage {...props} />} />
-            <Route path="/signin" element={<SigninPage />} />
+            <Route path="/signin" element={<SigninPage {...props} />} />
             <Route path="/todo" element={<TodoPage />} />
             <Route path="*" element={<div>404페이지</div>} />
         </Routes>

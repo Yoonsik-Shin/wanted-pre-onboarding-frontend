@@ -1,9 +1,10 @@
 import { ChangeEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useIsLogin } from "../../../commons/hooks/useIsLogin";
+import { IModal } from "../../../commons/hooks/useOpenModal";
 import SigninUI from "./signin.presenter";
 
-export default function Signin() {
+export default function Signin(props: IModal) {
     useIsLogin();
     const navigate = useNavigate();
     const [email, setEmail] = useState<string>("");
@@ -24,6 +25,7 @@ export default function Signin() {
             password={password}
             onChangeEmail={onChangeEmail}
             onChangePassword={onChangePassword}
+            {...props}
         />
     );
 }

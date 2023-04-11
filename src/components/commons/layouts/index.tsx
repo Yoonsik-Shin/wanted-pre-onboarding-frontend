@@ -9,18 +9,13 @@ import LayoutNavigation from "./navigation";
 // }
 
 export default function Layout() {
-    const { type, open, setOpen, handleOpen } = useOpenModal();
+    const modalProps = useOpenModal();
 
     return (
         <>
-            <LayoutNavigation />
+            <LayoutNavigation {...modalProps} />
             <div>
-                <App
-                    type={type}
-                    open={open}
-                    setOpen={setOpen}
-                    handleOpen={handleOpen}
-                />
+                <App {...modalProps} />
                 {/* {cloneElement(props.children, {
                     type,
                     open,
@@ -28,7 +23,11 @@ export default function Layout() {
                     handleOpen,
                 })} */}
             </div>
-            <CustomModal open={open} setOpen={setOpen} type={type} />
+            <CustomModal
+                open={modalProps.open}
+                setOpen={modalProps.setOpen}
+                type={modalProps.type}
+            />
         </>
     );
 }

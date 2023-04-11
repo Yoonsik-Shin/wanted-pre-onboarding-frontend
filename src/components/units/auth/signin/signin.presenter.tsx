@@ -3,8 +3,14 @@ import { onClickSubmit } from "./signin.queries";
 import { IProps } from "./signin.types";
 
 export default function SigninUI(props: IProps) {
-    const { navigate, email, password, onChangeEmail, onChangePassword } =
-        props;
+    const {
+        navigate,
+        email,
+        password,
+        onChangeEmail,
+        onChangePassword,
+        handleOpen,
+    } = props;
 
     return (
         <>
@@ -21,7 +27,12 @@ export default function SigninUI(props: IProps) {
             />
             <button
                 data-testid="signup-button"
-                onClick={onClickSubmit({ navigate, email, password })}
+                onClick={onClickSubmit({
+                    navigate,
+                    email,
+                    password,
+                    handleOpen,
+                })}
             >
                 로그인
             </button>

@@ -1,16 +1,18 @@
 import { AppBar, styled, Typography } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
-import { useOpenModal } from "../../hooks/useOpenModal";
+import { IModal } from "../../hooks/useOpenModal";
 
-export default function LayoutNavigation() {
+export default function LayoutNavigation(props: IModal) {
     const navigate = useNavigate();
     const isLogin = localStorage.getItem("access_token");
-    const { handleOpen } = useOpenModal();
+    const { handleOpen } = props;
+
     const linkList = [
         { to: "/signup", value: "SIGNUP" },
         { to: "/signin", value: "SIGNIN" },
         { to: "/todo", value: "TODO" },
     ];
+
     const onClickLogout = () => {
         localStorage.removeItem("access_token");
         handleOpen("signout");
