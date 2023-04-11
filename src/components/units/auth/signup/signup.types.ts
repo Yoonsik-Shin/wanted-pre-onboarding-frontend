@@ -14,6 +14,10 @@ export interface IInfo {
     navigate: NavigateFunction;
 }
 
+export interface IInfoModal extends IInfo {
+    handleOpen: (type: string) => void;
+}
+
 export interface ISignupInfo {
     email: ISignupInfoDetail;
     password: ISignupInfoDetail;
@@ -27,7 +31,7 @@ export interface ISignupInfoDetail {
     errorMsg: string;
 }
 
-export interface IProps extends IInfo {
+export interface IProps extends IInfoModal {
     buttonDisabled: boolean;
     errorMessage: {
         email: string;
