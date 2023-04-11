@@ -3,8 +3,9 @@ import SignupUI from "./signup.presenter";
 import { useNavigate } from "react-router-dom";
 import { ISignup, ISignupInfo } from "./signup.types";
 import { useIsLogin } from "../../../commons/hooks/useIsLogin";
+import { IModal } from "../../../commons/hooks/useOpenModal";
 
-export default function Signup() {
+export default function Signup(props: IModal) {
     useIsLogin();
     const navigate = useNavigate();
     const [email, setEmail] = useState<string>("");
@@ -57,6 +58,7 @@ export default function Signup() {
             errorMessage={errorMessage}
             onChangeSignup={onChangeSignup}
             SIGNUP_INFO={SIGNUP_INFO}
+            {...props}
         />
     );
 }

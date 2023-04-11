@@ -1,16 +1,17 @@
-import axios from "axios";
-import { IInfo } from "./signup.types";
+import { DeployUrlAxios } from "../../../../commons/lib/deploy-url-axios";
+import { IInfoModal } from "./signup.types";
 
 export const onClickSubmit =
-    ({ email, password, navigate }: IInfo) =>
+    ({ email, password, navigate, handleOpen }: IInfoModal) =>
     async () => {
         try {
-            await axios({
+            await DeployUrlAxios({
                 method: "post",
-                url: "http://localhost:8000/auth/signup",
+                url: "/auth/signup",
                 headers: { "Content-Type": "application/json" },
                 data: { email, password },
             });
+            handleOpen("signup");
             navigate("/signin");
         } catch (error) {
             alert(error);

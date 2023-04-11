@@ -11,11 +11,12 @@ export default function SignupUI(props: IProps) {
         errorMessage,
         onChangeSignup,
         SIGNUP_INFO,
+        handleOpen,
     } = props;
 
     return (
         <>
-            <div>회원가입페이지</div>
+            <h1>회원가입페이지</h1>
             <input
                 type="text"
                 data-testid="email-input"
@@ -30,7 +31,12 @@ export default function SignupUI(props: IProps) {
             {errorMessage.password}
             <button
                 data-testid="signup-button"
-                onClick={onClickSubmit({ email, password, navigate })}
+                onClick={onClickSubmit({
+                    email,
+                    password,
+                    navigate,
+                    handleOpen,
+                })}
                 disabled={buttonDisabled}
             >
                 회원가입
